@@ -1,0 +1,97 @@
+
+/*Stylesheet for hotel website. created by Raeciel Reyes*/
+
+
+@font-face {
+    font-family: 'edwardianscriptefregular';
+    src: url('fonts/edwardianscriptefregular-webfont.eot');
+    src: url('fonts/edwardianscriptefregular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/edwardianscriptefregular-webfont.woff2') format('woff2'),
+        url('fonts/edwardianscriptefregular-webfont.woff') format('woff'),
+        url('fonts/edwardianscriptefregular-webfont.ttf') format('truetype'),
+        url('fonts/edwardianscriptefregular-webfont.svg#edwardianscriptefregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*General formatting for the page*/
+
+body{
+    min-height:100%;
+    min-width:1300px;
+    background: #ffffff;
+    background-repeat:no-repeat;
+    background: -webkit-linear-gradient(#be919d, #ffffff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#be919d, #ffffff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#be919d, #ffffff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#be919d, #ffffff) fixed; /* Standard syntax */
+    margin:10px;
+}
+
+/* Formatting for main block elements */
+
+#main{
+    width: 100%;
+    height: 500px;
+    background-color: white;
+    opacity: 0.7;
+
+}
+
+/* Layout for top-level blocks */
+header {
+    height: 300px;
+    background-color: #ffffff;
+    margin:0 auto;
+    position:relative;
+    background-image: url("images/header1.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+
+}
+/*
+#rightImg{
+    padding:0;
+    margin:0 auto;
+    float:right;
+
+
+    /*
+    background-image: url("images/header1.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+}*/
+
+h1, nav{
+    color: #7b444f;
+    position:relative;
+    top: 20px;
+    right: 350px;
+    text-align: center;
+
+}
+h1{
+
+    font-size: 60pt;
+    font-family: edwardianscriptefregular, Calbiri, serif;
+    margin-top:0;
+
+
+}
+
+nav ul li{
+    font-size: 18pt;
+    display: inline;
+    padding: 20px;
+}
+/*
+h1#bg{
+    margin-top:0;
+    height:300px;
+    background-image: url("images/header1.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+
+}*/
+
