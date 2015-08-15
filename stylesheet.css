@@ -12,7 +12,13 @@
 }
 
 html {
+    background-color: white;
 
+    background-repeat:no-repeat;
+    background: -webkit-linear-gradient(#f5dfe2, #ffffff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#f5dfe2, #ffffff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#f5dfe2, #ffffff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#fbf9cb, #ffffff) fixed; /* Standard syntax */
 
 }
 body {
@@ -23,6 +29,8 @@ body {
     font-family: "Minion Pro", serif;
     min-width: 1000px;
     margin:0 auto;
+
+
 }
 header{
     height:120px;
@@ -57,14 +65,11 @@ h1 {
     padding: 20px;
     text-align: justify;*/
 
-    min-height:500px;
-    background-color: white;
+    width: 1000px;
+    min-height:600px;
+    margin:0 auto;
+    text-align: center;
 
-    background-repeat:no-repeat;
-    background: -webkit-linear-gradient(#f5dfe2, #ffffff); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#f5dfe2, #ffffff); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#f5dfe2, #ffffff); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#fbf9cb, #ffffff) fixed; /* Standard syntax */
 
 }
 
@@ -81,9 +86,7 @@ h1 {
     border: 1px solid rgb(114, 57, 65);
 }
 #content{
-    margin-left:70px;
-    margin-right:70px;
-    padding:20px;
+
 
 }
 
@@ -138,7 +141,7 @@ footer{
     width:100%;
     height: 80px;
     position:absolute;
-    bottom:0;
+
 
     text-align:center;
     background: #ffffff;
@@ -149,13 +152,16 @@ footer{
     background: linear-gradient(#ffffff,#7b3e46) fixed; /* Standard syntax */
 }
 
-footer .top{
-    background-color:inherit;
-    color:rgb(231,247,254);
+footer .top {
+    background-color: inherit;
+    color: rgb(231, 247, 254);
     text-decoration: underline;
 
-
-
+}
+footer p{
+margin:0;
+    padding-top:15px;
+}
 
 }
 footer .top:hover {
