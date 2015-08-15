@@ -1,25 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Home page</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <title>Home</title>
+    <meta charset=utf-8>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="jsFiles/jquery-1.11.3.min.js"></script>
+    <script src="jsFiles/carousel.js"></script>
 </head>
 <body>
+<a id="top"></a>
 <header>
-    <h1 id="bg">Rose Meadows<br>
+    <h1>Rose Meadows<br>
         Hotel</h1>
     <nav>
         <ul>
             <li>Home</li>
-            <li><a href="rooms.html">Our Rooms</a></li>
-            <li><a href="bookings.html">Book a Room</a></li>
+            <li><a href="./pages/rooms.html">Our Rooms</a></li>
+            <li><a href="./pages/bookings.html">Book a Room</a></li>
         </ul>
     </nav>
-
 </header>
 <div id="main">
 
+    <div id="carousel"></div>
+    <div id="content"><p>Welcome!</p></div>
 </div>
+<footer>
+    <p><a href="#top" class="top">Back to Top</a></p>
+    <script>
+        document.write("Author: Raeciel Reyes. This page was last modified on: " + document.lastModified +"");
+    </script>
+</footer>
 </body>
 </html>
