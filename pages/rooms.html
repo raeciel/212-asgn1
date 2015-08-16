@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="../stylesheet.css">
 </head>
 <body>
+<a id="top"></a> <!-- 'back to top' links to this -->
 <header>
+
     <h1 id="bg">Rose Meadows<br>
         Hotel</h1>
     <nav>
@@ -20,5 +22,58 @@
 </header>
 <div id="main">
 
+    <h2>Our Rooms</h2><hr>
+    <section class="rooms">
+        <img src="../images/Single_Room.jpg" alt="A Single Room">
+        <h3>Single Room</h3>
+        <div class="description"></div>
+    </section>
+
+    <section class="rooms">
+        <img src="../images/Double_Room.jpg" alt="A Double Room">
+        <h3>Double Room</h3>
+        <div class="description"></div>
+    </section>
+
+    <section class="rooms">
+        <img src="../images/Twin_Room.jpg" alt="A Twin Room">
+        <h3>Twin Room</h3>
+        <div class="description"></div>
+    </section>
+
+    <section class="rooms">
+        <img src="../images/King_Room.jpg" alt="A King Room">
+        <h3>King Room</h3>
+        <div class="description"></div>
+    </section>
+
+
+    <section class="rooms">
+        <img src="../images/Superior_King_Room.jpg" alt="A Superior King Room">
+        <h3>Superior King Room</h3>
+        <div class="description"></div>
+    </section>
+
+    <section class="rooms">
+        <img src="../images/Triple_Room.jpg" alt="A Triple Room">
+        <h3>Triple Room</h3>
+        <div class="description"></div>
+    </section>
+
+
+
 </div>
+<footer>
+    <p><a href="#top" class="top">Back to Top</a></p>
+    <p>This website was created for a University project. The content is largely fictional and no services are actually being offered.
+    </p>
+    <script>
+        update = new Date(document.lastModified)
+        theMonth = update.getMonth() + 1
+        theDate = update.getDate()
+        theYear = update.getFullYear()
+        document.writeln("<p>Author: Raeciel Reyes. This page was last modified on: " + theDate + "/" + theMonth + "/" + theYear+"</p>")
+    </script>
+</footer>
+</body>
 </html>

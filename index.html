@@ -8,7 +8,7 @@
     <script src="jsFiles/carousel.js"></script>
 </head>
 <body>
-<a id="top"></a>
+<a id="top"></a> <!-- 'back to top' links to this -->
 <header>
     <h1>Rose Meadows<br>
         Hotel</h1>
@@ -35,10 +35,17 @@
 
     </section>
 </div>
+
 <footer>
     <p><a href="#top" class="top">Back to Top</a></p>
+    <p>This website was created for a University project. The content is largely fictional and no services are actually being offered.
+    </p>
     <script>
-        document.write("Author: Raeciel Reyes. This page was last modified on: " + document.lastModified +"");
+        update = new Date(document.lastModified)
+        theMonth = update.getMonth() + 1
+        theDate = update.getDate()
+        theYear = update.getFullYear()
+        document.writeln("Author: Raeciel Reyes. This page was last modified on: " + theDate + "/" + theMonth + "/" + theYear)
     </script>
 </footer>
 </body>
