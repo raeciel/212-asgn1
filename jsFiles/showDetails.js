@@ -3,6 +3,7 @@
  */
 
 var Details = (function() {
+    "use strict";
     var pub = {};
 
 
@@ -11,7 +12,9 @@ var Details = (function() {
         var target = $(this).parent().find(".description").children("dl")[0];
         //var title = $(this).find("h3");
 
-        var title = $(this).html();
+        var title = $(this).parent().find("h3").html();
+        //var title = $(this).html();
+
         //title = title.slice(0, title.indexOf(" "));
 
 
@@ -19,6 +22,7 @@ var Details = (function() {
         //xmlSource = xmlSource.replace("images/","reviews/");
         //xmlSource = xmlSource.replace(".jpg",".xml");
         //console.log(xmlSource);
+
         console.log(title);
 
         $.ajax({
@@ -30,37 +34,38 @@ var Details = (function() {
 
                     if ($(data).find("number").length) {
                         parseReviews(data, target,title);
+                        $(target).parent(".description").slideToggle("1000");
+
                     } else {
-                        $(target).append("<p>Sorry there are no reviews for this film.</p>");
+                        $(target).append("<p>Sorry there are no reviews for this detail.</p>");
                     }
                 }
             },
             error: function () {
-                $(target).append("<p>Sorry there are no reviews for this film.</p>");
+                $(target).append("<p>Sorry there are no files for this detail.</p>");
+            //error: function(jqXHR, textStatus, errorThrown ) {
+             //   console.log(jqXHR.response);
             }
         });
     }
 
-    function parseReviews(data, target,title){
-
+    function parseReviews(data, target, title){
         $(data).find("hotelRoom").each(function () {
-
             var roomType = $(this).find("roomType")[0].textContent;
             var number = $(this).find("number")[0].textContent;
             //var user = $(this).find("user")[0].textContent;
 
             if(roomType === title) {
+                //var text = "<dt>" + number + ": " + "</dt><br>";
+
                 $(target).append( "<dt>" + number + ": " + "</dt><br>");
                 //$(target).css('border', '3px solid #723941');
                 $(target).css({
-                    'border' : "3px solid #723941",
-                    'width' : "400px",
-                    'margin': "0"
-                })
-
+                    border : "3px solid #723941",
+                    width : "400px",
+                    margin: "0"
+                });
             }
-
-
         });
         $("dt").css({
             display: "table-cell",
@@ -69,27 +74,20 @@ var Details = (function() {
         $("dd").css({
             display: "table-cell"
         });
-        //$(target).css({
-        //    marginTop: "40px"
-        //});
 
         console.log(title);
-        //target.style.marginTop = "40px";
-        //}
-        //var isEmpty = $(this).find("review");
 
-
-        /*
-        if($(data).find("rating").length){
-            console.log("// it exists.");
-        }else {
-            console.log("no");
-        }*/
     }
 
     pub.setup = function() {
 
-        $("h3").click(showReviews);
+        //$(".details").click(showReviews);
+
+        $(".details").click(function() {
+
+           $(this).parent().find(".description").slideToggle("2000",showReviews);
+        });
+
     };
 
     return pub;

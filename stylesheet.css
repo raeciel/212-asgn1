@@ -60,6 +60,8 @@ h1 {
 h3{
     display:inline;
     margin-left: 40px;
+
+
 }
 #main{
     /*
@@ -113,7 +115,13 @@ h3{
 
 .details{
     display: inline;
+    font-size: 8pt;
+
+
     float:right;
+    padding:0;
+    margin:0;
+
 
 }
 
