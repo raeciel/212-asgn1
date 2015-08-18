@@ -15,10 +15,10 @@ html {
     background-color: white;
 
     background-repeat:no-repeat;
-    background: -webkit-linear-gradient(#f5dfe2, #ffffff); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#f5dfe2, #ffffff); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#f5dfe2, #ffffff); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#fbf9cb, #ffffff) fixed; /* Standard syntax */
+    background: -webkit-linear-gradient(#fbebcf, #ffffff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#fbebcf, #ffffff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#fbebcf, #ffffff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#fbebcf, #ffffff) fixed; /* Standard syntax */
 
 }
 body {
@@ -57,6 +57,10 @@ h1 {
     vertical-align: middle;
 
 }
+h3{
+    display:inline;
+    margin-left: 40px;
+}
 #main{
     /*
     background-color:rgb(231,247,254);
@@ -70,13 +74,14 @@ h1 {
     margin:0 auto;
     text-align: center;
     clear: both;
+    padding-bottom: 60px;
 
 
 
 }
 
 #carousel {
-    padding-top:20px;
+    padding-top:50px;
     text-align: center;
 
 }
@@ -89,19 +94,28 @@ h1 {
 }
 
 .rooms{
-    margin-left: 40px;
-    float: left;
-    padding:20px;
+    /*margin-left: 40px;*/
+
+    /*float: left;*/
+    padding:10px;
+    display: inline-block;
 
 
 }
 .description{
     position:absolute;
+    margin:0;
+    padding:0;
     /* Style For JavaScript
     border: 1px #723941 solid;
     width:400px;*/
 }
 
+.details{
+    display: inline;
+    float:right;
+
+}
 
 
 nav{
@@ -155,15 +169,13 @@ footer{
     min-height: 80px;
     position:relative;
 
-
-
     text-align:center;
     background: #ffffff;
     background-repeat:no-repeat;
-    background: -webkit-linear-gradient(#ffffff,#723941); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#7b3e46, #ffffff); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#7b3e46, #ffffff); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#ffffff,#7b3e46) fixed; /* Standard syntax */
+    background: -webkit-linear-gradient(#ffffff, #723941); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ffffff, #7b3e46); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ffffff, #7b3e46); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ffffff, #7b3e46) fixed; /* Standard syntax */
 }
 
 footer .top {
