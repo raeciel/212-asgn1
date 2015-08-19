@@ -33,7 +33,7 @@ body {
 
 }
 header{
-    height:120px;
+    min-height:120px;
     padding: 15px;
     text-align:center;
     margin:0 auto;
@@ -58,8 +58,10 @@ h1 {
 
 }
 h3{
-    display:inline;
-    margin-left: 40px;
+    display:inline-block;
+    margin: 0 0 0 40px;
+    font-size: 16pt;
+
 
 
 }
@@ -86,42 +88,60 @@ h3{
     padding-top:50px;
     text-align: center;
 
+
 }
 #carousel figure{
     margin: 0;
+    opacity:0;
 
 }
-#carousel img{
+#carousel img, .rooms img{
     border: 1px solid rgb(114, 57, 65);
+
 }
 
 .rooms{
     /*margin-left: 40px;*/
 
     /*float: left;*/
-    padding:10px;
+    padding: 20px 20px 50px 20px;
     display: inline-block;
 
 
 }
-.description{
+
+.description, .roomType, .rooms img{
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.30);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.30);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.30);
+}
+.description, .rooms dl{
     position:absolute;
     margin:0;
     padding:0;
+
     /* Style For JavaScript
     border: 1px #723941 solid;
     width:400px;*/
+
+
 }
 
-.details{
-    display: inline;
+.roomType{
+    border: 2px solid #8D4253;
+    border-radius: 2px;
+    padding: 5px 5px;
+
+
+}
+
+.detailsButton {
+    display: inline-block;
     font-size: 8pt;
 
 
     float:right;
-    padding:0;
-    margin:0;
-
+    margin-top: 2px;
 
 }
 

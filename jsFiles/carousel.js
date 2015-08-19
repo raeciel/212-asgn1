@@ -8,24 +8,53 @@ var Carousel = (function(){
     var categoryList = [];
     var categoryIndex = 0;
     function nextCategory() {
+        /*
         var element = document.getElementById("carousel");
         element.innerHTML = categoryList[categoryIndex].makeHTML();
+
         categoryIndex += 1;
+
         if (categoryIndex >= categoryList.length) {
             categoryIndex = 0;
-        }
+        }*/ //old
 
         //var image = $("#carousel").children().find("img");
         //image.animate({paddingLeft: 100, opacity: 0}, 3500, "swing",nextCategory);
         //image.fadeTo(3000,0.7,nextCategory);
+
+        //var carousel = $("#carousel").append(categoryList[i].makeHTML());
+
+
+
+
+        var element = document.getElementById("carousel");
+        element.innerHTML = categoryList[categoryIndex].makeHTML();
+        var image = $("#carousel").children();
+        image.fadeTo(3000,1,function(){
+
+        });
+
+
+        categoryIndex += 1;
+
+        if (categoryIndex >= categoryList.length) {
+            categoryIndex = 0;
+        }
+
+
+        //image.animate({paddingLeft: 100, opacity: 0}, 3500, "swing",nextCategory);
+        image.fadeTo(3000,0,nextCategory);
+
+
 
     }
     function MovieCategory(title, image) { this.title = title;
         this.image = image;
         //this.page = page;/*
         this.makeHTML = function() {
-            return "<figure>" + "<img src=" + this.image + ">" + "<figcaption>" +
-                this.title + "</figcaption>" + "</figure>";
+            return '<figure>' + '<img src=' + this.image + '>' + '<figcaption>' +
+                this.title + '</figcaption>' + '</figure>';
+
         };
     }
 
@@ -36,8 +65,11 @@ var Carousel = (function(){
             "images/index2.jpg"));
         categoryList.push(new MovieCategory("Twin Room",
             "images/index3.jpg"));
+
+
         nextCategory();
-        setInterval(nextCategory, 3000);
+
+        //setInterval(nextCategory, 3000);
     };
 
     return pub;
