@@ -223,3 +223,35 @@ footer .top:hover {
     background-color: inherit;
     text-decoration:none;
 }
+
+#bookingForm{
+    padding-top: 10px;
+    width: 500px;
+    margin: 0 auto;
+}
+#bookingForm ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+#bookingForm ul li{
+    padding: 5px;
+}
+
+#bookingForm label{
+    float:left;
+    width: 200px;
+}
+
+#findButton{
+    background-color: #8D4253;
+    color: #fbebcf;
+    padding:10px;
+    margin: 20px;
+    float:right;
+    font-size: 10pt;
+}
+
+fieldset{
+    border:0;
+}

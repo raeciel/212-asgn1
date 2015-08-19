@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Book a Room</title>
     <link rel="stylesheet" href="../stylesheet.css">
+    <script src="../jsFiles/jquery-1.11.3.min.js"></script>
+    <script src="../jsFiles/cookies.js"></script>
 </head>
 <body>
 <header>
@@ -19,6 +21,35 @@
 
 </header>
 <div id="main">
+<h2>Make a New Booking</h2><hr>
+    <form id="bookingForm">
+        <fieldset>
+            <ul>
+                <li><label for="checkIn">Check in date:</label>
+                    <input type="date" name="checkIn" id="checkIn" placeholder="dd/mm/yyyy">
+                </li>
+
+                <li><label for="checkOut">Check out date:</label>
+                    <input type="date" name="checkOut" id="checkOut" placeholder="dd/mm/yyyy">
+                </li>
+
+            </ul>
+
+            <input type="button" value="Find Rooms" id="findButton">
+        </fieldset>
+
+
+        <fieldset id="enterName">
+            <ul>
+
+            </ul>
+        </fieldset>
+
+    </form>
+
+
+
 
 </div>
+</body>
 </html>
