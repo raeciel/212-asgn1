@@ -61,9 +61,9 @@ var Carousel = (function(){
     pub.setup = function() {
         categoryList.push(new MovieCategory("Restaurant",
             "images/index1.jpg"));
-        categoryList.push(new MovieCategory("Superior King Room",
+        categoryList.push(new MovieCategory("King Room",
             "images/index2.jpg"));
-        categoryList.push(new MovieCategory("Twin Room",
+        categoryList.push(new MovieCategory("Triple Room",
             "images/index3.jpg"));
 
 
