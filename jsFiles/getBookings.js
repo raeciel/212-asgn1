@@ -3,45 +3,9 @@
  */
 
 var Bookings = (function (){
+    var booked, rooms;
     var pub = {};
-    var booked = [];
-    var rooms = [];
-    
-    function getRooms() {
-        $.ajax({
-            type: "GET",
-            url: "../xmlFiles/hotelRooms.xml",
-            cache: false,
-            success: function (data) {
-                if ($(data).find("number").length) {
-                    storeRooms(data);
-                    getDates();
-                }
-            },
-            error: function () {
-                console.log("error");
-            }
-        });
-    }
-    
-    function storeRooms(data){
-        console.log("Storing Rooms");
-        $(data).find("hotelRoom").each(function () {
-            var existingRooms = {};
-            existingRooms.number = $(this).find("number").html();
-            existingRooms.roomType = $(this).find("roomType").html();
-            existingRooms.desc = $(this).find("description").html();
-            existingRooms.price= $(this).find("pricePerNight").html();
 
-            rooms.push(existingRooms);
-        });
-
-        var i;
-        for(i = 0; i < rooms.length; i += 1){
-            console.log(rooms[i]);
-        }
-
-    }
     
     function getBooked(){
         //var target = $(".availRooms").children("table")[0];
@@ -54,7 +18,7 @@ var Bookings = (function (){
                 //if($(target).is(":empty")) {
 
                     if ($(data).find("number").length) {
-                        storeBookings(data);
+                        storeBookedRooms(data);
                         getRooms();
 
                     //} else {
@@ -71,7 +35,8 @@ var Bookings = (function (){
         });
     }
 
-    function storeBookings(data) {
+    function storeBookedRooms(data) {
+        booked = [];
         console.log("Storing Bookings");
         $(data).find("booking").each(function () {
             var existingBookings = {};
@@ -81,8 +46,8 @@ var Bookings = (function (){
             //var checkInMonth = $(checkIn).children.find("month")[0].textContent;
             existingBookings.number = $(this).find("number").html();
             existingBookings.name = $(this).find("name").html();
-            existingBookings.checkIn = checkIn.find("day").html() + "-" + checkIn.find("month").html() +
-            "-" + checkIn.find("year").html();
+            existingBookings.checkIn = new Date(checkIn.find("month").html() + "/" + checkIn.find("day").html() +
+            "/" + checkIn.find("year").html());
 
             /*
             existingBookings.checkInMonth = checkIn.find("month").html();
@@ -92,23 +57,84 @@ var Bookings = (function (){
             existingBookings.checkOutYear = checkOut.find("year").html();
             */
 
-            existingBookings.checkOut = checkOut.find("day").html() + "-" + checkOut.find("month").html() +
-            "-" + checkOut.find("year").html();
+            existingBookings.checkOut = new Date(checkOut.find("month").html() + "/" + checkOut.find("day").html() +
+            "/" + checkOut.find("year").html());
 
             booked.push(existingBookings);
 
         });
-        //console.log(booked[0]);
+        console.log(booked[0]);
 
     }
 
-    function getDates() {
+
+
+    function getRooms() {
+        $.ajax({
+            type: "GET",
+            url: "../xmlFiles/hotelRooms.xml",
+            cache: false,
+            success: function (data) {
+                if ($(data).find("number").length) {
+                    storeRooms(data);
+                    availableRooms();
+                }
+            },
+            error: function () {
+                console.log("error");
+            }
+        });
+    }
+
+    function storeRooms(data){
+        rooms = [];
+        console.log("Storing Rooms");
+        $(data).find("hotelRoom").each(function () {
+            var existingRooms = {};
+            existingRooms.number = $(this).find("number").html();
+            existingRooms.roomType = $(this).find("roomType").html();
+            existingRooms.desc = $(this).find("description").html();
+            existingRooms.price= $(this).find("pricePerNight").html();
+            rooms.push(existingRooms);
+        });
+    }
+
+    function availableRooms(){
+        var checkIn, checkOut, i;
+        checkIn = new Date($("#checkIn").val());
+        checkOut = new Date($("#checkOut").val());
+        console.log("Rooms before: " + rooms.length);
+        for (i = 0; i < booked.length; i += 1){
+            var bookedDates = booked[i];
+            var isBooked = false;
+
+            if (checkIn > bookedDates.checkIn && checkIn < bookedDates.checkOut){
+                isBooked = true;
+            } else if (checkOut > bookedDates.checkIn && checkOut < bookedDates.checkOut){
+                isBooked = true;
+            }
+
+            if (isBooked){
+                //console.log("isBooked getting called");
+                var j;
+                for ( j = 0; j < rooms.length; j += 1) {
+                    var room = rooms[j];
+                    if (room.number === bookedDates.number) {
+                        rooms.splice(j,1);
+                    }
+                }
+            }
+        }
+        console.log("Rooms after: " + rooms.length);
+    }
+
+    /*function getDates() {
         var checkIn = $("#checkIn").val();
         var checkOut = $("#checkOut").val();
         console.log(checkIn);
         console.log(booked[0]);
 
-    }
+    }*/
 
     pub.setup = function () {
         $("#findButton").css("cursor","pointer");
