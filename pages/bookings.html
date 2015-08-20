@@ -28,9 +28,13 @@
 </header>
 <div id="main">
 <h2>Make a New Booking</h2><hr>
-    <form id="bookingForm">
+    <div id="pending"></div>
+    <form id="bookingForm" novalidate>
         <fieldset>
             <ul>
+                <li><label for="name">Enter your name:</label>
+                    <input type="text" name="name" id="name">
+                </li>
                 <li><label for="checkIn">Check in date:</label>
                     <input type="text" name="checkIn" id="checkIn" class="datePicker" placeholder="mm/dd/yyyy">
                 </li>
@@ -42,13 +46,6 @@
             </ul>
 
             <input type="button" value="Find Rooms" id="findButton">
-        </fieldset>
-
-
-        <fieldset id="enterName">
-            <ul>
-
-            </ul>
         </fieldset>
 
     </form>

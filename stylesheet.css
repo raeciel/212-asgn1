@@ -89,6 +89,7 @@ h3{
 #carousel {
     padding-top:50px;
     text-align: center;
+    height: 500px;
 
 
 }
@@ -245,6 +246,7 @@ footer .top:hover {
 
 #bookingForm label{
     float:left;
+    text-align: left;
     width: 200px;
 }
 
@@ -259,4 +261,20 @@ footer .top:hover {
 
 fieldset{
     border:0;
+}
+
+#availRooms table td, #availRooms table th {
+    padding: 10px 20px 10px 20px;
+}
+
+#availRooms table caption{
+    font-weight: 600;
+    font-size: 14pt;
+    color: #fbebcf;
+    background-color: #8D4253;
+    padding:10px
+}
+
+#availRooms table{
+    margin : auto;
 }

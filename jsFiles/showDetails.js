@@ -88,7 +88,7 @@ var Details = (function() {
                     color: "#fbebcf",
                     width : "402px",
                     margin: "0",
-                    textAlign : "center",
+                    textAlign : "center"
                 });
             }
         });
@@ -128,7 +128,7 @@ var Details = (function() {
                     backgroundColor: "#8D4253",
                     color: "#fbebcf",
                     marginTop:"20px",
-                    width : "402px",
+                    width : "402px"
 
                 });
             }

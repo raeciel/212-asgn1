@@ -3,7 +3,7 @@
  */
 
 var Bookings = (function (){
-    var booked, rooms;
+    var booked, rooms, roomTypes;
     var pub = {};
 
     
@@ -67,8 +67,6 @@ var Bookings = (function (){
 
     }
 
-
-
     function getRooms() {
         $.ajax({
             type: "GET",
@@ -77,7 +75,8 @@ var Bookings = (function (){
             success: function (data) {
                 if ($(data).find("number").length) {
                     storeRooms(data);
-                    availableRooms();
+                    getRoomTypes();
+                    //availableRooms();
                 }
             },
             error: function () {
@@ -99,6 +98,43 @@ var Bookings = (function (){
         });
     }
 
+    function getRoomTypes() {
+        $.ajax({
+            type: "GET",
+            url: "../xmlFiles/roomTypes.xml",
+            cache: false,
+            success: function (data) {
+                if ($(data).find("id").length) {
+                    storeRoomTypes(data);
+                    availableRooms();
+
+                }
+            },
+            error: function () {
+                console.log("error");
+            }
+        });
+    }
+
+    function storeRoomTypes(data){
+        $(data).find("roomType").each(function () {
+            var roomType = $(this).find("id").html();
+            var maxGuest= $(this).find("maxGuests").html();
+            var k;
+            for( k = 0; k < rooms.length; k+= 1) {
+                var availRoom = rooms[k];
+                if (availRoom.roomType === roomType){
+                    availRoom.maxGuest= maxGuest;
+                }
+
+            }
+        });
+    }
+
+
+
+
+
     function availableRooms(){
         var checkIn, checkOut, i;
         checkIn = new Date($("#checkIn").val());
@@ -108,11 +144,14 @@ var Bookings = (function (){
             var bookedDates = booked[i];
             var isBooked = false;
 
-            if (checkIn > bookedDates.checkIn && checkIn < bookedDates.checkOut){
+
+            if (checkIn >= bookedDates.checkIn && checkIn < bookedDates.checkOut){
                 isBooked = true;
             } else if (checkOut > bookedDates.checkIn && checkOut < bookedDates.checkOut){
                 isBooked = true;
             }
+
+
 
             if (isBooked){
                 //console.log("isBooked getting called");
@@ -125,7 +164,31 @@ var Bookings = (function (){
                 }
             }
         }
+
+        var target = $("#availRooms").children("table")[0];
+        $(target).html("");
+        $(target).append("<caption>Available Rooms</caption><tr><th>Room No.</th><th>Room Type</th><th>Description</th><th>Max Guests</th><th>Price</th><th></th></tr>");
+        var k;
+        for( k = 0; k < rooms.length; k+= 1){
+            var availRoom = rooms[k];
+
+            $(target).append("<tr><td>" + availRoom.number + "</td><td>" + availRoom.roomType +"</td><td>" + availRoom.desc + "</td><td>"+ availRoom.maxGuest  +"</td>" +
+                "<td>" + "$" + availRoom.price + "</td><td>"+ '<input type="button" value="Book Now" class="bookButton">'  +"</td></tr>" );
+        }
+        /*
+        $(target).append("<tr><td>" + number + "</td>" + "<td>" + content + "</td>" +
+            "<td>" + "$" + price + "</td></tr>" );
+            */
+        $(target).css({
+            border : "1px solid #723941",
+            //backgroundColor: "#8D4253",
+            //color: "#fbebcf",
+            marginTop:"20px",
+            textAlign : "left"
+        });
+        console.log(rooms[0]);
         console.log("Rooms after: " + rooms.length);
+
     }
 
     /*function getDates() {
