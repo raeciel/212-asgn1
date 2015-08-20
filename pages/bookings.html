@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <title>Book a Room</title>
     <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="../jsFiles/datePicker/jquery-ui.min.css">
+    <link rel="stylesheet" href="../jsFiles/datePicker/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="../jsFiles/datePicker/jquery-ui.structure.min.css">
     <script src="../jsFiles/jquery-1.11.3.min.js"></script>
+    <script src="../jsFiles/datePicker/jquery-ui.min.js"></script>
     <script src="../jsFiles/cookies.js"></script>
+    <script src="../jsFiles/date.js"></script>
+    <script src="../jsFiles/getBookings.js"></script>
 </head>
 <body>
 <header>
@@ -26,11 +32,11 @@
         <fieldset>
             <ul>
                 <li><label for="checkIn">Check in date:</label>
-                    <input type="date" name="checkIn" id="checkIn" placeholder="dd/mm/yyyy">
+                    <input type="text" name="checkIn" id="checkIn" class="datePicker" placeholder="dd-mm-yyyy">
                 </li>
 
                 <li><label for="checkOut">Check out date:</label>
-                    <input type="date" name="checkOut" id="checkOut" placeholder="dd/mm/yyyy">
+                    <input type="text" name="checkOut" id="checkOut" class="datePicker" placeholder="dd-mm-yyyy">
                 </li>
 
             </ul>
@@ -46,10 +52,20 @@
         </fieldset>
 
     </form>
-
-
-
-
+    <div id="availRooms"><table></table></div>
 </div>
+
+<footer>
+    <p><a href="#top" class="top">Back to Top</a></p>
+    <p>This website was created for a University project. The content is largely fictional and no services are actually being offered.
+    </p>
+    <script>
+        update = new Date(document.lastModified);
+        theMonth = update.getMonth() + 1;
+        theDate = update.getDate();
+        theYear = update.getFullYear();
+        document.writeln("<p>Author: Raeciel Reyes. This page was last modified on: " + theDate + "/" + theMonth + "/" + theYear+"</p>")
+    </script>
+</footer>
 </body>
 </html>
