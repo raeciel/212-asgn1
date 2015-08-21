@@ -12,6 +12,7 @@
     <script src="../jsFiles/cookies.js"></script>
     <script src="../jsFiles/date.js"></script>
     <script src="../jsFiles/getBookings.js"></script>
+    <script src="../jsFiles/pendingBooking.js"></script>
 </head>
 <body>
 <header>
@@ -27,8 +28,11 @@
 
 </header>
 <div id="main">
+
 <h2>Make a New Booking</h2><hr>
     <div id="pending"></div>
+    <input type="button" value="Clear" id="clearButton">
+    <div id="validate"><p></p><ul></ul></div>
     <form id="bookingForm" novalidate>
         <fieldset>
             <ul>
@@ -49,7 +53,7 @@
         </fieldset>
 
     </form>
-    <div id="availRooms"><table></table></div>
+    <div id="availRooms"><table id="availRoomsTable"></table></div>
 </div>
 
 <footer>

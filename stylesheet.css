@@ -250,31 +250,46 @@ footer .top:hover {
     width: 200px;
 }
 
-#findButton{
+#findButton, #clearButton{
     background-color: #8D4253;
     color: #fbebcf;
-    padding:10px;
-    margin: 20px;
-    float:right;
     font-size: 10pt;
+    padding:10px;
+
+
+}
+#findButton{
+    float:right;
+    margin: 20px;
+}
+#clearButton{
+    margin:0 auto;
+    display:none;
 }
 
 fieldset{
     border:0;
 }
 
-#availRooms table td, #availRooms table th {
+#availRooms table td, #availRooms table th, #pending table td, #pending table th{
     padding: 10px 20px 10px 20px;
 }
 
-#availRooms table caption{
+#availRooms table caption, #pending table caption{
     font-weight: 600;
     font-size: 14pt;
     color: #fbebcf;
     background-color: #8D4253;
-    padding:10px
+    padding:10px;
 }
 
-#availRooms table{
+#availRooms table, #pending table{
     margin : auto;
 }
+
+#pending table{
+    border: 1px solid #723941;
+    margin-top: 20px;
+    text-align: left;
+}
+

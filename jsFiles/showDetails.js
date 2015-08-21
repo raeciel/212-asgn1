@@ -32,16 +32,11 @@ var Details = (function() {
                     if ($(data).find("id").length) {
                         showType(data,target2,title);
 
-
-                    } else {
-                        $(target2).append("<p>Sorry there are no reviews for this detail.</p>");
                     }
                 }
             },
-            error: function () {
-                $(target2).append("<p>Sorry there are no files for this detail.</p>");
-                //error: function(jqXHR, textStatus, errorThrown ) {
-                //   console.log(jqXHR.response);
+            error: function (jqXHR, textStatus, errorThrown) {
+                   console.log(jqXHR.response, textStatus,errorThrown);
             }
         });
 
@@ -58,15 +53,11 @@ var Details = (function() {
                         $(desc).slideToggle("1000");
 
 
-                    } else {
-                        $(target).append("<p>Sorry there are no reviews for this detail.</p>");
                     }
                 }
             },
-            error: function () {
-                $(target).append("<p>Sorry there are no files for this detail.</p>");
-                //error: function(jqXHR, textStatus, errorThrown ) {
-                //   console.log(jqXHR.response);
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR.response, textStatus, errorThrown);
             }
         });
 
