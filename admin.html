@@ -1,11 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="stylesheet.css">
+    <script src="jsFiles/jquery-1.11.3.min.js"></script>
+    <script src="jsFiles/admin.js"></script>
+
 </head>
 <body>
 
+<header>
+    <h1 id="bg">Rose Meadows<br>
+        Hotel</h1>
+    <nav>
+        <ul>
+            <li>Staff Administration</li>
+        </ul>
+    </nav>
+
+</header>
+
+<div id="main">
+    <h2>Current Bookings</h2><hr>
+    <div id ="currBookings">
+        <ul></ul>
+    </div>
+
+
+</div>
+<footer>
+    <p><a href="#top" class="top">Back to Top</a></p>
+    <p>This website was created for a University project. The content is largely fictional and no services are actually being offered.
+    </p>
+    <script>
+        update = new Date(document.lastModified);
+        theMonth = update.getMonth() + 1;
+        theDate = update.getDate();
+        theYear = update.getFullYear();
+        document.writeln("<p>Author: Raeciel Reyes. This page was last modified on: " + theDate + "/" + theMonth + "/" + theYear+"</p>")
+    </script>
+</footer>
 </body>
 </html>

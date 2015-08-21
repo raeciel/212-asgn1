@@ -163,25 +163,30 @@ nav ul li{
 
 
 }
-
+#main a{
+    color: #8D4253;
+}
+#main a:hover{
+    text-decoration: none;
+}
 
 /* unvisited link */
 nav a:link {
-    color: rgb(245, 223, 226);
+    color: #F5DFE2;
     background-color: inherit;
     text-decoration:none;
 }
 
 /* visited link */
 nav a:visited {
-    color: rgb(245, 223, 226);
+    color: #F5DFE2;
     background-color: inherit;
     text-decoration:none;
 }
 
 /* mouse over link */
 nav a:hover {
-    color: rgb(245, 223, 226);
+    color: #F5DFE2;
     background-color: inherit;
     text-decoration:underline;
 }
@@ -293,3 +298,8 @@ fieldset{
     text-align: left;
 }
 
+#currBookings{
+
+    width: 700px;
+    margin: 0 auto;
+}

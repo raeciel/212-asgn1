@@ -1,15 +1,15 @@
 /**
  * Created by rreyes on 8/20/15.
  *
- * Checkout display functions for the Classic Cinema site
+ * Pending booking display function for the hotel.
  *
  */
 
-/*jslint browser: true, devel: true */
-/*global Cookie, window */
+/*jslint browser: true, messy white space: true, this: true*/
+/*global Cookie, window, $ */
 
 /**
- * Module pattern for Checkout functions
+ * Module pattern for Pending functions
  */
 var Pending = (function () {
     "use strict";
